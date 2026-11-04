@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NCRP Death Race</title>
+  <meta name="description" content="Schedule, results and standings for the NCRP Death Race series.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;900&family=Chakra+Petch:wght@500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="side-tag" aria-hidden="true">DEATH RACE // NO REFUNDS // NO RESPAWNS</div>
+
+  <header class="topbar">
+    <a class="brand" href="#top">NCRP // DEATH RACE</a>
+    <nav aria-label="Sections">
+      <a href="#next">Next race</a>
+      <a href="#results">Results</a>
+      <a href="#standings">Standings</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <p class="kicker">&gt; THE CITY SANCTIONS NOTHING. WE RACE ANYWAY.</p>
+      <h1><span class="solid">Death</span><span class="outline">Race</span></h1>
+      <div class="stripes" aria-hidden="true"></div>
+    </section>
+
+    <section id="next" class="block">
+      <h2 class="section-title"><span>01</span> Next race</h2>
+      <div id="next-race" class="next-card">
+        <p class="muted">Loading…</p>
+      </div>
+    </section>
+
+    <section id="results" class="block">
+      <h2 class="section-title"><span>02</span> Results</h2>
+      <div id="results-list"></div>
+    </section>
+
+    <section id="standings" class="block">
+      <h2 class="section-title"><span>03</span> Standings</h2>
+      <div id="standings-table"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="muted">No refunds. No respawns.</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

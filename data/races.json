@@ -1,0 +1,33 @@
+{
+  "series": "NCRP Death Race",
+  "contact": "Dredgen",
+  "races": [
+    {
+      "number": 3,
+      "name": "Tunnel Trouble",
+      "start": "2026-11-06T02:00:00Z",
+      "location": "[REDACTED]",
+      "terrain": "Badlands sprint",
+      "buyIn": 10000,
+      "prize": "Winner takes all",
+      "status": "upcoming",
+      "results": []
+    },
+    {
+      "number": 2,
+      "name": "Can-Fun",
+      "status": "finished",
+      "results": [
+        { "pos": 1, "driver": "Chris Callahan" }
+      ]
+    },
+    {
+      "number": 1,
+      "name": "MEGADEATHRACE",
+      "status": "finished",
+      "results": [
+        { "pos": 1, "driver": "Seiji" }
+      ]
+    }
+  ]
+}
