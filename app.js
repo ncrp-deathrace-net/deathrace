@@ -55,7 +55,7 @@
       .sort(function (a, b) { return new Date(a.start) - new Date(b.start); })[0];
 
     if (!upcoming) {
-      box.appendChild(el('p', { class: 'empty', text: 'No race on the board. Watch Discord for the next one.' }));
+      box.appendChild(el('p', { class: 'empty', text: 'Check back soon.' }));
       return;
     }
 
