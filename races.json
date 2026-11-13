@@ -1,0 +1,40 @@
+{
+  "series": "NCRP Death Race",
+  "contact": "Dredgen",
+  "races": [
+    {
+      "number": 4,
+      "name": "Two Wheel Panic",
+      "start": "2026-11-12T02:00:00Z",
+      "status": "finished",
+      "results": [
+        { "pos": 1, "driver": "Dredgen" }
+      ]
+    },
+    {
+      "number": 3,
+      "name": "Tunnel Trouble",
+      "start": "2026-11-06T02:00:00Z",
+      "status": "finished",
+      "results": [
+        { "pos": 1, "driver": "Chris Callahan" }
+      ]
+    },
+    {
+      "number": 2,
+      "name": "Can-Fun",
+      "status": "finished",
+      "results": [
+        { "pos": 1, "driver": "Chris Callahan" }
+      ]
+    },
+    {
+      "number": 1,
+      "name": "MEGADEATHRACE",
+      "status": "finished",
+      "results": [
+        { "pos": 1, "driver": "Seiji" }
+      ]
+    }
+  ]
+}
