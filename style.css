@@ -296,7 +296,6 @@ main {
   line-height: 1;
   text-transform: uppercase;
 }
-.winner .ride { font-weight: 700; }
 
 .table-wrap { overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; }
@@ -356,6 +355,79 @@ tr.out td.driver { text-decoration: line-through; text-decoration-color: var(--a
   th, td { padding: 10px 14px; }
 }
 
+/* ---------- motion: same effects as the street ads ---------- */
+.stripes { animation: stripeMove 2.4s linear infinite; }
+@keyframes stripeMove { from { background-position: 0 0; } to { background-position: 96.17px 0; } }
+
+.glitch { position: relative; animation: gShake 4.2s infinite; }
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  text-shadow: none;
+  opacity: 0;
+}
+.glitch::before { color: #9B5CFF; animation: gA 4.2s infinite steps(1); }
+.glitch::after  { color: var(--accent); animation: gB 4.2s infinite steps(1); }
+.glitch-outline::before { color: transparent; -webkit-text-stroke-color: #9B5CFF; }
+.glitch-outline::after  { color: transparent; -webkit-text-stroke-color: #FF7A1A; }
+.glitch-outline, .glitch-outline::before, .glitch-outline::after { animation-delay: 1.3s; }
+
+@keyframes gShake {
+  0%, 85%, 100% { transform: none; }
+  86% { transform: translate(4px, 0) skewX(-3deg); }
+  88% { transform: translate(-5px, 1px); }
+  90% { transform: translate(2px, -1px) skewX(2deg); }
+  92% { transform: none; }
+}
+@keyframes gA {
+  0%, 85%, 100% { opacity: 0; transform: none; clip-path: inset(0 0 0 0); }
+  86% { opacity: .9; transform: translate(-10px, 2px); clip-path: inset(8% 0 62% 0); }
+  88% { opacity: .9; transform: translate(8px, -2px); clip-path: inset(52% 0 24% 0); }
+  90% { opacity: .9; transform: translate(-6px, 0); clip-path: inset(30% 0 48% 0); }
+  92% { opacity: .9; transform: translate(12px, 1px); clip-path: inset(74% 0 6% 0); }
+  93% { opacity: 0; }
+}
+@keyframes gB {
+  0%, 86%, 100% { opacity: 0; transform: none; clip-path: inset(0 0 0 0); }
+  87% { opacity: .9; transform: translate(10px, -1px); clip-path: inset(60% 0 12% 0); }
+  89% { opacity: .9; transform: translate(-8px, 2px); clip-path: inset(14% 0 66% 0); }
+  91% { opacity: .9; transform: translate(6px, 0); clip-path: inset(40% 0 36% 0); }
+  93% { opacity: 0; }
+}
+
+.race-name, .winner .name { animation: flick 5.5s infinite; }
+@keyframes flick {
+  0%, 94%, 100% { opacity: 1; }
+  95% { opacity: .25; }
+  96% { opacity: 1; }
+  97% { opacity: .4; }
+  98% { opacity: 1; }
+}
+
+.scan {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(0, 0, 0, .18) 0 2px, transparent 2px 4px);
+}
+.scan::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  height: 18%;
+  top: -20%;
+  background: linear-gradient(180deg, transparent, rgba(237, 232, 223, .05), transparent);
+  animation: scanMove 6s linear infinite;
+}
+@keyframes scanMove { from { top: -20%; } to { top: 105%; } }
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .stripes, .glitch, .glitch::before, .glitch::after,
+  .race-name, .winner .name, .scan::after { animation: none; }
 }
