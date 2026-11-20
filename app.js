@@ -130,7 +130,8 @@
         if (isFinisher(b)) return 1;
         return 0;
       });
-      var winner = results.filter(function (r) { return r.pos === 1; })[0];
+      var winners = results.filter(function (r) { return r.pos === 1; });
+      var winner = winners[0];
 
       var details = el('details', { class: 'race-result' });
       if (i === 0) details.open = true;
@@ -145,9 +146,9 @@
 
       if (winner) {
         details.appendChild(el('div', { class: 'winner' }, [
-          el('span', { class: 'label', text: 'WINNER' }),
-          el('span', { class: 'name', text: winner.driver }),
-          winner.ride ? el('span', { class: 'ride', text: winner.ride }) : null
+          el('span', { class: 'label', text: winners.length > 1 ? 'WINNERS' : 'WINNER' }),
+          el('span', { class: 'name', text: winners.map(function (w) { return w.driver; }).join(' & ') }),
+          winners.length === 1 && winner.ride ? el('span', { class: 'ride', text: winner.ride }) : null
         ]));
       }
 
@@ -163,7 +164,7 @@
       });
 
       // Winner-only results: the red bar says it all, skip the table.
-      if (!(winner && results.length === 1)) details.appendChild(el('div', { class: 'table-wrap' }, [
+      if (!(winner && results.length === winners.length)) details.appendChild(el('div', { class: 'table-wrap' }, [
         el('table', null, [
           el('thead', null, [el('tr', null, ['POS', 'DRIVER', 'RIDE', 'TIME', 'NOTES'].map(function (h) {
             return el('th', { scope: 'col', text: h });
