@@ -3,6 +3,16 @@
   "contact": "Dredgen",
   "races": [
     {
+      "number": 5,
+      "name": "Mai Mai Mania",
+      "start": "2026-11-20T02:00:00Z",
+      "status": "finished",
+      "results": [
+        { "pos": 1, "driver": "Royal" },
+        { "pos": 1, "driver": "John" }
+      ]
+    },
+    {
       "number": 4,
       "name": "Two Wheel Panic",
       "start": "2026-11-12T02:00:00Z",
