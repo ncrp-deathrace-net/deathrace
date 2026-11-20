@@ -8,8 +8,7 @@
       "start": "2026-11-20T02:00:00Z",
       "status": "finished",
       "results": [
-        { "pos": 1, "driver": "Royal" },
-        { "pos": 1, "driver": "John" }
+        { "pos": 1, "driver": "Royal & John" }
       ]
     },
     {
