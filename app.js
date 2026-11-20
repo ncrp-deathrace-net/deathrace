@@ -147,8 +147,7 @@
       if (winner) {
         details.appendChild(el('div', { class: 'winner' }, [
           el('span', { class: 'label', text: winners.length > 1 ? 'WINNERS' : 'WINNER' }),
-          el('span', { class: 'name', text: winners.map(function (w) { return w.driver; }).join(' & ') }),
-          winners.length === 1 && winner.ride ? el('span', { class: 'ride', text: winner.ride }) : null
+          el('span', { class: 'name', text: winners.map(function (w) { return w.driver; }).join(' & ') })
         ]));
       }
 
@@ -156,17 +155,14 @@
         var out = !isFinisher(r);
         return el('tr', { class: out ? 'out' : '' }, [
           el('td', { class: 'pos' }, [out ? el('span', { class: 'badge', text: (r.status || 'DNF').toUpperCase() }) : 'P' + r.pos]),
-          el('td', { class: 'driver', text: r.driver || '—' }),
-          el('td', { text: r.ride || '—' }),
-          el('td', { text: r.time || '—' }),
-          el('td', { class: 'note', text: r.note || '' })
+          el('td', { class: 'driver', text: r.driver || '—' })
         ]);
       });
 
       // Winner-only results: the red bar says it all, skip the table.
       if (!(winner && results.length === winners.length)) details.appendChild(el('div', { class: 'table-wrap' }, [
         el('table', null, [
-          el('thead', null, [el('tr', null, ['POS', 'DRIVER', 'RIDE', 'TIME', 'NOTES'].map(function (h) {
+          el('thead', null, [el('tr', null, ['POS', 'DRIVER'].map(function (h) {
             return el('th', { scope: 'col', text: h });
           }))]),
           el('tbody', null, rows)
